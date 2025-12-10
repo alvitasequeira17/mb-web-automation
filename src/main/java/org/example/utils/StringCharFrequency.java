@@ -36,7 +36,7 @@ public class StringCharFrequency {
      * Example usage and test
      */
     public static void main(String[] args) {
-        String input = "aA@b #c!";
+        String input = "aA@@b  #c!";
         System.out.println("Input: " + input);
         System.out.println("Output: " + countCharFrequency(input));
     }

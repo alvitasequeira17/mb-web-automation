@@ -98,21 +98,10 @@ allure serve target/allure-results
 - Allure results and reports are uploaded as artifacts in GitHub Actions.
 - The report is published to GitHub Pages (see workflow in `.github/workflows/`).
 
-## Cross-Browser Execution in CI
-- The workflow runs tests in Chrome, Firefox, and Edge using a matrix strategy.
-- See `.github/workflows/test-automation.yml` for details.
-
 ## Troubleshooting
 - **Element not found/timeouts:** Ensure the site is accessible and selectors are up to date.
 - **Browser not launching:** Check browser installation and driver compatibility.
 - **Allure report not generated:** Ensure `target/allure-results` exists after test run.
-
-## Contribution Guidelines
-- Follow the Page Object Model for new pages.
-- Add/modify test data in JSON files, not in code.
-- Write independent, deterministic, and maintainable tests.
-- Use explicit waits, avoid Thread.sleep.
-- Document new features and changes in this README.
 
 ## License
 This project is for demonstration and evaluation purposes.
