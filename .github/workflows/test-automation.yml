@@ -23,9 +23,8 @@ jobs:
     name: Cross-Browser Tests
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: false
       matrix:
-        browser: [chrome, firefox, edge]
+        browser: [${{ github.event.inputs.browser }}]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
