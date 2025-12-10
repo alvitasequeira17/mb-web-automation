@@ -1,0 +1,20 @@
+application:
+  base_url: "https://trade.multibank.io/"
+  name: "MultiBank Trading Platform"
+
+browser:
+  default_browser: "chrome"
+  headless: false
+  window_size: "1920,1080"
+  supported_browsers:
+    - chrome
+    - firefox
+    - edge
+    - safari
+
+timeouts:
+  implicit_wait: 10
+  explicit_wait: 20
+  page_load: 30
+  script_timeout: 30
+

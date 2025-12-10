@@ -1,0 +1,14 @@
+{
+  "expected_spot_header": "Spot",
+  "trading_pair": "BTC-AED",
+  "expected_categories": [
+    "all",
+    "usdt",
+    "btc",
+    "fiat",
+    "Legacy",
+    "DeFi",
+    "Stablecoin"
+  ]
+}
+

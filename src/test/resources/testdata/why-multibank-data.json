@@ -1,0 +1,87 @@
+{
+  "menuText": "Why Multibank?",
+  "urlContains": "multibank.io/en-AE",
+  "banners": {
+    "title1": "WHERE TRADFI MEETS CRYPTO",
+    "description1": "All-in-one crypto spot exchange. Backed by the financial giant MultiBank Group, est. in 2005, holding 17+ licenses worldwide.",
+    "title2": "SECURE FINANCIAL ECOSYSTEM POWERED BY THE BLOCKCHAIN!",
+    "description2": "Enjoy our revolutionary comprehensive suite of innovative solutions, including a digital bank, online blockchain custody accounts, an internet payment gateway, and much more.",
+    "title3": "Master the Market with a Champion’s Mindset",
+    "description3": "The same discipline, focus, and resilience that defined Khabib’s legacy now drive MultiBank Group’s pursuit of excellence in global finance."
+  },
+  "sections": {
+    "portfolio": {
+      "title": "Securely Build Your Portfolio with MultiBank.io",
+      "description": "Diversify your crypto portfolio on one of the most regulated platforms in the world, with segregated clients’ funds, advanced security measures and user-friendly tools to help you make informed investment decisions. Rest easy knowing that your assets are safe and secure with us.",
+      "buttonText": "Get Started"
+    },
+    "trading": {
+      "title": "Catch Your Next Trading Opportunity",
+      "buttonText": "See More"
+    },
+    "tradingSpeed": {
+      "title": "The Fastest Way to Trade",
+      "description": "Experience lightning-fast trading speed with MultiBank io, and buy and sell Bitcoin, Ethereum and other cryptocurrencies instantly using your preferred payment method. With 40 nanosecond trading execution speed and the ability to handle 9 million+ trades a second, our user-friendly platform is perfect for both beginners and advanced traders alike."
+    },
+    "paymentMethods": {
+      "title": "Credit Card & Bank Transfers",
+      "description": "At MultiBank io you can deposit USD and EURO, into your Crypto Account using Credit Card or Bank Transfer. Seamlessly buy your favorite Cryptocurrency and trade FIAT/CRYPTO pairings on our exchange platform"
+    },
+    "panicSell": {
+      "title": "Panic Sell",
+      "description": "Quickly sell all your low value cryptocurrencies to an asset of your choice."
+    },
+    "convert": {
+      "title": "Convert",
+      "description": "Simple, secure, and instant.\nSeamlessly convert one cryptocurrency to another — anytime, anywhere, with zero fees. Enjoy guaranteed rates and hassle-free conversions across any trading pair."
+    }
+  },
+  "advantages": {
+    "title": "Our Advantages",
+    "subtitle": "At MultiBank, we put our clients first, offering personalized support and innovative trading solutions",
+    "items": [
+      {
+        "title": "Fiat On and Off Ramp",
+        "description": "Seamlessly convert between FIAT and crypto with MultiBank io's wide range of payment options, including bank transfers, Debit and Credit Cards, and more."
+      },
+      {
+        "title": "Heavily Regulated",
+        "description": "MultiBank Group is comprised of several entities that are heavily regulated across 5 continents by 17+ financial regulators"
+      },
+      {
+        "title": "Security of Funds",
+        "description": "Secure digital asset custody platform with multi-party computation (MPC)"
+      },
+      {
+        "title": "Crypto Currencies",
+        "description": "Buy and sell your selection of over 20 of the top crypto currencies"
+      },
+      {
+        "title": "Customer Service",
+        "description": "Enjoy assistance from our 24/7/365 customer service desk"
+      }
+    ]
+  },
+  "spotTrading": {
+    "title": "Spot Trading",
+    "subtitle": "Access the most liquid crypto market in the world",
+    "description": "MultiBank io will offer regulated cryptocurrency spot trading through our Australian division \"MEX Digital Pty Ltd\" which is regulated by the Australian Securities & Investments Commission (ASIC).",
+    "features": [
+      "Low fees & tight spreads",
+      "90+ trading pairs",
+      "Buy bitcoin online via bank transfer with USD or EUR",
+      "BTC, ETH, LTC, BCH, XRP and many more on the MultiBank io Crypto Exchange"
+    ],
+    "buttonText": "Start Now"
+  },
+  "rwa": {
+    "title": "MultiBank.io RWA",
+    "description": "MultiBank.io RWA is bringing $10 billion in tokenized real-world assets to market, starting with $3 billion in ultra-luxury real estate via MAG. Our secure and regulated marketplace offers 24/7 access to fractional, income-generating assets and up to 8% APY with daily payouts. Powered by the $MBG token for staking, fee discounts, and deflationary utility.",
+    "buttonText": "Start Now"
+  },
+  "startTrading": {
+    "title": "Start Trading Now",
+    "description": "Join the biggest regulated crypto exchange on the market",
+    "buttonText": "Explore our platform"
+  }
+}
