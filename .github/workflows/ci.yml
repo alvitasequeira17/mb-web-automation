@@ -1,5 +1,4 @@
 name: MultiBank Automation Tests
-
 on:
   workflow_dispatch:
     inputs:
