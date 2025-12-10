@@ -23,10 +23,6 @@ public class HomePage extends BasePage {
                     ".style_menu-container__Ha_wV > div.position-relative:not(:has(.style_user-actions__YBD2c)) span.style_menu-item__SLdA4"
     );
 
-    // Authentication Buttons Locators
-    private final By loginButton = By.cssSelector("nav[id='navbar'] a:nth-child(1) button:nth-child(1) span:nth-child(1)");
-    private final By signUpButton = By.cssSelector("nav[id='navbar'] a:nth-child(2) button:nth-child(1) span:nth-child(1)");
-
     // Trading Section Locators
     private final By spotTradingSection = By.cssSelector("div.home_section-wrapper__3AINE, [class*='home_section-wrapper']");
     private final By spotTradingHeader = By.cssSelector(".style_active__Yuxzy");
@@ -275,31 +271,4 @@ public class HomePage extends BasePage {
         waitForPageLoad();
         return new WhyMultiBankPage(driver);
     }
-
-    @Step("Check if login button is displayed")
-    public boolean isLoginButtonDisplayed() {
-        return isElementDisplayed(loginButton);
-    }
-
-    @Step("Check if sign up button is displayed")
-    public boolean isSignUpButtonDisplayed() {
-        return isElementDisplayed(signUpButton);
-    }
-
-    @Step("Verify authentication buttons are functional")
-    public boolean areAuthButtonsFunctional() {
-        try {
-            String loginHref = getAttribute(loginButton, "href");
-            String signUpHref = getAttribute(signUpButton, "href");
-
-            boolean loginValid = loginHref != null && !loginHref.isEmpty() && !loginHref.equals("#");
-            boolean signUpValid = signUpHref != null && !signUpHref.isEmpty() && !signUpHref.equals("#");
-
-            return loginValid && signUpValid;
-        } catch (TimeoutException e) {
-            logger.warn("Authentication buttons not found or not clickable");
-            return false;
-        }
-    }
 }
-

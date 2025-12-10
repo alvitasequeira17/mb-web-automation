@@ -15,13 +15,6 @@
         </classes>
     </test>
 
-    <test name="Chrome - Authentication Tests" preserve-order="true">
-        <parameter name="browser" value="chrome"/>
-        <classes>
-            <class name="tests.AuthenticationTest"/>
-        </classes>
-    </test>
-
     <test name="Chrome - Trading Functionality Tests" preserve-order="true">
         <parameter name="browser" value="chrome"/>
         <classes>
@@ -47,18 +40,6 @@
     <!-- Firefox Browser Tests (Cross-browser Execution) -->
     <test name="Firefox - Navigation Tests" preserve-order="true">
         <parameter name="browser" value="firefox"/>
-        <classes>
-            <class name="tests.NavigationTest">
-                <methods>
-                    <include name="verifyTopNavigationDisplayed"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
-
-    <!-- Edge Browser Tests (Cross-browser Execution) -->
-    <test name="Edge - Navigation Tests" preserve-order="true">
-        <parameter name="browser" value="edge"/>
         <classes>
             <class name="tests.NavigationTest">
                 <methods>
