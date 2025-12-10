@@ -27,7 +27,7 @@ public class WhyMultiBankPage extends BasePage {
     // Trading Section
     private final By tradingTitle = By.xpath("//h3[normalize-space()='Catch Your Next Trading Opportunity']");
     private final By tradingButton = By.xpath("(//span[contains(text(),'See More')])[1]");
-    private final By tradingSpeedTitle = By.xpath("(//h2[@class='heading-2 text-white'])[1]");
+    private final By tradingSpeedTitle = By.xpath("//body/div[@id='__next']/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/h2[1]/div[1]/p[1]");
     private final By tradingSpeedDescription = By.xpath("//p[contains(text(),'Experience lightning-fast trading speed with Multi')]");
 
     // Payment Methods Section
