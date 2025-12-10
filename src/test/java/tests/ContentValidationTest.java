@@ -2,8 +2,6 @@ package tests;
 
 import io.qameta.allure.*;
 import org.example.pages.HomePage;
-import org.example.utils.TestDataManager;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -12,9 +10,8 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Test class for Content Validation scenarios
- * Covers assignment requirement: "Marketing banners appear at page bottom and
- * Download section links correctly to App Store and Google Play"
+ * Test suite for Content Validation scenarios
+ * Validates the presence and correctness of marketing banners and download links
  */
 @Epic("MultiBank Trading Platform")
 @Feature("Content Validation")

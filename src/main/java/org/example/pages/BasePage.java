@@ -117,17 +117,10 @@ public abstract class BasePage {
         logger.debug("Scrolled to bottom of page");
     }
 
+    @Step("Wait for page to load completely")
     protected void waitForPageLoad() {
         wait.until(driver -> executeScript("return document.readyState").equals("complete"));
         logger.debug("Page loaded completely");
-    }
-
-    protected String getCurrentUrl() {
-        return driver.getCurrentUrl();
-    }
-
-    protected String getPageTitle() {
-        return driver.getTitle();
     }
 
     private Object executeScript(String script, Object... args) {

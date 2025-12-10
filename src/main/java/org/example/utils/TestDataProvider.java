@@ -1,9 +1,10 @@
-package utils;
+package org.example.utils;
 
-import org.example.utils.TestDataManager;
 import org.testng.annotations.DataProvider;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Data Provider class for data-driven testing
@@ -13,6 +14,7 @@ public class TestDataProvider {
 
     /**
      * Provides advantage items data for parameterized testing
+     *
      * @return Object[][] containing item index and item data
      */
     @DataProvider(name = "advantageItemsData")
@@ -35,6 +37,7 @@ public class TestDataProvider {
 
     /**
      * Provides spot trading features data for parameterized testing
+     *
      * @return Object[][] containing feature text
      */
     @DataProvider(name = "spotTradingFeaturesData")

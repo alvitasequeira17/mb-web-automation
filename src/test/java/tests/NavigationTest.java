@@ -13,7 +13,7 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Test class for Navigation and Layout validation scenarios.
+ * Test suite for Navigation and Layout validation scenarios.
  * Validates the visibility and functionality of the top navigation menu on the home page.
  */
 @Epic("MultiBank Trading Platform")

@@ -17,7 +17,7 @@ public class TestListener implements ITestListener {
     public void onTestStart(ITestResult result) {
         logger.info("Starting test: {}", result.getMethod().getMethodName());
         Allure.getLifecycle().updateTestCase(testResult ->
-            testResult.setDescription(result.getMethod().getDescription())
+                testResult.setDescription(result.getMethod().getDescription())
         );
     }
 

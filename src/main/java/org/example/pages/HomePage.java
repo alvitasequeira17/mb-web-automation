@@ -2,7 +2,6 @@ package org.example.pages;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -40,7 +39,7 @@ public class HomePage extends BasePage {
     private final By googlePlayLink = By.cssSelector("a[href*='play.google'], a[href*='android'], img[alt*='Google Play']");
 
     // About Section
-    private final By aboutUsLink = By.xpath("//span[contains(@class, 'style_menu-item__SLdA4') and normalize-space()='About Us']");
+    private final By aboutUsLink = By.id("about-header-option-open-button");
     private final By whyMultiBankLink = By.xpath("//a[contains(@class, 'style_trade-link__m4JnR') and contains(@href, 'multibank')]");
 
     public HomePage(WebDriver driver) {

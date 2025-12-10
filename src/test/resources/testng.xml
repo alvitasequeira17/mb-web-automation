@@ -9,10 +9,10 @@
 
     <test name="MultiBank Tests" preserve-order="true">
         <classes>
-            <class name="tests.NavigationTest"/>
-<!--            <class name="tests.TradingTest"/>-->
-<!--            <class name="tests.ContentValidationTest"/>-->
-<!--            <class name="tests.WhyMultiBankTest"/>-->
+<!--            <class name="tests.NavigationTest"/>-->
+<!--                        <class name="tests.TradingTest"/>-->
+            <!--            <class name="tests.ContentValidationTest"/>-->
+                        <class name="tests.WhyMultiBankTest"/>
         </classes>
     </test>
 

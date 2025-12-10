@@ -4,18 +4,17 @@ import io.qameta.allure.*;
 import org.example.pages.HomePage;
 import org.example.pages.WhyMultiBankPage;
 import org.example.utils.TestDataManager;
+import org.example.utils.TestDataProvider;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import utils.TestDataProvider;
 
-import java.util.List;
 import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Simplified test for Why MultiBank Page
+ * Why MultiBank Test Suite
  * Verifies all expected text content from why-multibank-data.json
  */
 @Epic("MultiBank Trading Platform")
@@ -298,7 +297,7 @@ public class WhyMultiBankTest extends BaseTest {
         assertThat(whyMultiBankPage.isTextDisplayed(expectedButtonText))
                 .as("Spot Trading button should be displayed")
                 .isTrue();
-        
+
         //Verify RWA Section
         assertThat(whyMultiBankPage.isTextDisplayed(expectedRWATitle))
                 .as("RWA title should be displayed")

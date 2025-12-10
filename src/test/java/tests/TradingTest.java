@@ -4,8 +4,8 @@ import io.qameta.allure.*;
 import org.example.pages.HomePage;
 import org.example.utils.TestDataManager;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.List;
