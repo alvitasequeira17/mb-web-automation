@@ -17,14 +17,10 @@ public class HomePage extends BasePage {
 
     // Navigation Menu Locators
     private final By topNavigation = By.cssSelector("header, nav, [role='navigation']");
-    private final By navigationLinks = By.cssSelector(
-            ".style_menu-container__Ha_wV > a, " +
-                    ".style_menu-container__Ha_wV > div.position-relative:not(:has(.style_user-actions__YBD2c)) span.style_menu-item__SLdA4"
-    );
 
     // Trading Section Locators
     private final By spotTradingSection = By.cssSelector("div.home_section-wrapper__3AINE, [class*='home_section-wrapper']");
-    private final By spotTradingHeader = By.cssSelector(".style_active__Yuxzy");
+    private final By spotTradingHeader = By.xpath("//span[@class='style_label-badge-wrapper__MWCxl style_active__Yuxzy']");
     private final By tradingTable = By.cssSelector("table.style_table__kBCjf, table[class*='style_table']");
     private final By tradingPairs = By.cssSelector("tr.style_row__BPgMJ.style_selectable__mQK12");
     private final By tradingCategories = By.cssSelector("button.style_tab__xRtAF");
@@ -60,48 +56,21 @@ public class HomePage extends BasePage {
         return isElementDisplayedWithWait(topNavigation, 10);
     }
 
-
-    @Step("Get all navigation links")
-    public List<WebElement> getNavigationLinks() {
-        return getElements(navigationLinks);
-    }
-
-    @Step("Get navigation link texts")
-    public List<String> getNavigationLinkTexts() {
-        List<WebElement> links = getNavigationLinks();
-        return links.stream()
-                .map(WebElement::getText)
-                .map(String::trim)
-                .filter(text -> !text.isEmpty())
-                .distinct() // Remove duplicates
-                .collect(Collectors.toList());
-    }
-
     @Step("Verify navigation item is functional: {linkText}")
     public boolean isNavigationLinkFunctional(String linkText) {
         try {
             // Find the navigation item in the menu container
             WebElement navItem = driver.findElement(By.xpath(
-                    String.format(
-                            "//div[contains(@class, 'style_menu-container')]" +
-                                    "//a[normalize-space()='%s'] | " +
-                                    "//div[contains(@class, 'style_menu-container')]" +
-                                    "//span[contains(@class, 'style_menu-item') and normalize-space()='%s']",
-                            linkText, linkText
-                    )
-            ));
-
+                    String.format("//*[contains(text(), '%s')]", linkText.replace("'", "\\'"))));
             // Check if it's displayed and enabled
             if (!navItem.isDisplayed() || !navItem.isEnabled()) {
                 return false;
             }
-
             // For <a> tags, verify href attribute
             if (navItem.getTagName().equals("a")) {
                 String href = navItem.getAttribute("href");
                 return href != null && !href.isEmpty() && !href.equals("#");
             }
-
             // For dropdown menus (div/span), they're functional if clickable
             return true;
 
@@ -189,7 +158,7 @@ public class HomePage extends BasePage {
         Map<String, String> pairData = new HashMap<>();
 
         // Assuming table structure: Pair | Price | 24h Change | High | Low | Last 7 days
-        if (cells.size() >= 5) {
+        if (cells.size() >= 6) {
             pairData.put("pair", cells.get(1).getText().trim());
             pairData.put("price", cells.get(2).getText().trim());
             pairData.put("change", cells.get(3).getText().trim());

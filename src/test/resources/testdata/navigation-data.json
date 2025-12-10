@@ -1,11 +1,11 @@
 {
-  "expected_navigation_items": [
-    "Dashboard",
-    "Markets",
-    "Trade",
-    "Features",
-    "About Us",
-    "Support"
-  ]
+  "expected_navigation_items": {
+    "dashboard": "Dashboard",
+    "markets": "Markets",
+    "trade": "Trade",
+    "features": "Features",
+    "about_us": "About Us",
+    "support": "Support"
+  }
 }
 

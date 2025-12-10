@@ -70,26 +70,6 @@ public class WhyMultiBankPage extends BasePage {
         return driver.getCurrentUrl();
     }
 
-    @Step("Check if text is displayed: {text}")
-    public boolean isTextDisplayed(String text) {
-        try {
-            // Use XPath to find any element containing the text
-            String xpath = String.format("//*[contains(text(), '%s')]", text.replace("'", "\\'"));
-            WebElement element = driver.findElement(By.xpath(xpath));
-            // Scroll to the element
-            scrollToElement(element);
-            boolean isDisplayed = element.isDisplayed();
-            logger.debug("Text '{}' - displayed: {}", text, isDisplayed);
-            return isDisplayed;
-        } catch (NoSuchElementException e) {
-            logger.debug("Text '{}' not found on page", text);
-            return false;
-        } catch (Exception e) {
-            logger.warn("Error checking if text '{}' is displayed: {}", text, e.getMessage());
-            return false;
-        }
-    }
-
     @Step("Get active banner title")
     public String getActiveBannerTitle() {
         return getText(bannerTitle);
@@ -129,6 +109,7 @@ public class WhyMultiBankPage extends BasePage {
     @Step("Get trading speed title")
     public String getTradingSpeedTitle() {
         scrollToElement(tradingSpeedTitle);
+        waitForPageLoad();
         return getText(tradingSpeedTitle);
     }
 

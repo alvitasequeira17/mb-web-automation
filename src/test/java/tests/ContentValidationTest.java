@@ -39,7 +39,7 @@ public class ContentValidationTest extends BaseTest {
         assertThat(bannersCount)
                 .as("At least one marketing banner should be present")
                 .isGreaterThan(0);
-        logger.info("✓ Found {} marketing banners at page bottom", bannersCount);
+        logger.info("Found {} marketing banners at page bottom", bannersCount);
     }
 
     @Test(priority = 2, description = "Verify download section is displayed")

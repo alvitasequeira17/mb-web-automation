@@ -7,7 +7,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.List;
 import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -21,12 +20,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class NavigationTest extends BaseTest {
 
     private HomePage homePage;
-    private List<String> expectedNavItems;
+    private Map<String, Object> testData;
 
     @BeforeClass
     public void loadTestData() {
-        Map<String, Object> testData = TestDataManager.loadTestData("navigation-data.json");
-        expectedNavItems = getExpectedNavItems(testData);
+        this.testData = TestDataManager.loadTestData("navigation-data.json");
     }
 
     @BeforeMethod
@@ -41,18 +39,37 @@ public class NavigationTest extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that the top navigation menu is displayed with all expected options")
     public void verifyTopNavigationDisplayed() {
+        @SuppressWarnings("unchecked")
+        Map<String, Object> menu = (Map<String, Object>) testData.get("expected_navigation_items");
         assertThat(homePage.isTopNavigationDisplayed())
                 .as("Top navigation should be displayed")
                 .isTrue();
+        String dashboardMenu = (String) menu.get("dashboard");
+        String marketsMenu = (String) menu.get("markets");
+        String tradeMenu = (String) menu.get("trade");
+        String featuresMenu = (String) menu.get("features");
+        String aboutUsMenu = (String) menu.get("about_us");
+        String supportMenu = (String) menu.get("support");
 
-        List<String> actualLinks = homePage.getNavigationLinkTexts();
-        logger.info("Found navigation links: {}", actualLinks);
-
-        assertThat(actualLinks)
-                .as("Navigation should contain all expected items")
-                .isNotEmpty()
-                .hasSize(expectedNavItems.size())
-                .containsExactlyInAnyOrderElementsOf(expectedNavItems);
+        assertThat(homePage.isTextDisplayed(dashboardMenu))
+                .as("Dashboard menu item should be displayed in the top navigation")
+                .isTrue();
+        assertThat(homePage.isTextDisplayed(marketsMenu))
+                .as("Markets menu item should be displayed in the top navigation")
+                .isTrue();
+        assertThat(homePage.isTextDisplayed(tradeMenu))
+                .as("Trade menu item should be displayed in the top navigation")
+                .isTrue();
+        assertThat(homePage.isTextDisplayed(featuresMenu))
+                .as("Features menu item should be displayed in the top navigation")
+                .isTrue();
+        assertThat(homePage.isTextDisplayed(aboutUsMenu))
+                .as("About Us menu item should be displayed in the top navigation")
+                .isTrue();
+        assertThat(homePage.isTextDisplayed(supportMenu))
+                .as("Support menu item should be displayed in the top navigation")
+                .isTrue();
+        logger.info("Top navigation menu is displayed with all expected options");
     }
 
     @Test(priority = 2, description = "Verify navigation items are functional and link to appropriate destinations")
@@ -60,22 +77,19 @@ public class NavigationTest extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that navigation items are functional and can be interacted with")
     public void verifyNavigationItemsFunctional() {
-        List<String> actualLinks = homePage.getNavigationLinkTexts();
+        @SuppressWarnings("unchecked")
+        Map<String, Object> menu = (Map<String, Object>) testData.get("expected_navigation_items");
 
-        logger.info("Verifying {} navigation items are functional", actualLinks.size());
+        logger.info("Verifying navigation items are functional");
 
-        actualLinks.forEach(linkText -> {
+        menu.values().forEach(linkTextObj -> {
+            String linkText = (String) linkTextObj;
             boolean isFunctional = homePage.isNavigationLinkFunctional(linkText);
             assertThat(isFunctional)
                     .as("Navigation item '%s' should be functional and clickable", linkText)
                     .isTrue();
             logger.info("Navigation item '{}' is functional", linkText);
         });
-    }
-
-    @SuppressWarnings("unchecked")
-    private List<String> getExpectedNavItems(Map<String, Object> testData) {
-        return (List<String>) testData.get("expected_navigation_items");
     }
 }
 

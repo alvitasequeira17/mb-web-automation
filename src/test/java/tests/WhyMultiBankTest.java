@@ -260,9 +260,6 @@ public class WhyMultiBankTest extends BaseTest {
                 .isEqualTo(expectedDescription);
 
         logger.info("Advantage item {} verified: {}", itemIndex + 1, expectedTitle);
-
-        Allure.addAttachment("Advantage Item " + (itemIndex + 1),
-                "Title: " + actualTitle + "\nDescription: " + actualDescription.substring(0, Math.min(100, actualDescription.length())) + "...");
     }
 
     @Test(priority = 6, description = "Verify Spot Trading and RWA section with all content")
@@ -323,7 +320,6 @@ public class WhyMultiBankTest extends BaseTest {
                 .isTrue();
 
         logger.info("Spot Trading feature {} verified: {}", featureNumber, feature);
-        Allure.addAttachment("Feature " + featureNumber, feature);
     }
 
     @Test(priority = 7, description = "Verify Start Trading section with all content")
