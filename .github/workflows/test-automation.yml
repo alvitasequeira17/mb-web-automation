@@ -7,7 +7,7 @@ on:
         description: 'Browser to run tests on'
         required: true
         default: 'chrome'
-        type: choice
+        type: string
         options:
           - chrome
           - firefox
@@ -16,7 +16,7 @@ on:
         description: 'Run in headless mode'
         required: true
         default: 'true'
-        type: boolean
+        type: string
 
 jobs:
   cross-browser-test:
@@ -61,7 +61,7 @@ jobs:
 
       - name: Run tests
         continue-on-error: true
-        run: mvn clean test -Dbrowser=${{ matrix.browser }} -Dheadless=true
+        run: mvn clean test -Dbrowser=${{ matrix.browser }} -Dheadless=${{ github.event.inputs.headless }}
 
       - name: Generate Allure Report
         if: always()
