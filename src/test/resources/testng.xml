@@ -7,45 +7,12 @@
         <listener class-name="org.example.listeners.TestListener"/>
     </listeners>
 
-    <!-- Chrome Browser Tests -->
-    <test name="Chrome - Navigation and Layout Tests" preserve-order="true">
-        <parameter name="browser" value="chrome"/>
+    <test name="MultiBank Tests" preserve-order="true">
         <classes>
             <class name="tests.NavigationTest"/>
-        </classes>
-    </test>
-
-    <test name="Chrome - Trading Functionality Tests" preserve-order="true">
-        <parameter name="browser" value="chrome"/>
-        <classes>
             <class name="tests.TradingTest"/>
-        </classes>
-    </test>
-
-    <test name="Chrome - Content Validation Tests" preserve-order="true">
-        <parameter name="browser" value="chrome"/>
-        <classes>
             <class name="tests.ContentValidationTest"/>
-        </classes>
-    </test>
-
-    <test name="Chrome - Why MultiBank Tests" preserve-order="true">
-        <parameter name="browser" value="chrome"/>
-        <classes>
             <class name="tests.WhyMultiBankTest"/>
-        </classes>
-    </test>
-
-
-    <!-- Firefox Browser Tests (Cross-browser Execution) -->
-    <test name="Firefox - Navigation Tests" preserve-order="true">
-        <parameter name="browser" value="firefox"/>
-        <classes>
-            <class name="tests.NavigationTest">
-                <methods>
-                    <include name="verifyTopNavigationDisplayed"/>
-                </methods>
-            </class>
         </classes>
     </test>
 
