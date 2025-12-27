@@ -37,7 +37,13 @@ public class DriverFactory {
     private static WebDriver createDriver(String browser, boolean headless) {
         switch (browser) {
             case "chrome":
-                WebDriverManager.chromedriver().clearDriverCache().setup();
+                // Pin ChromeDriver version in CI, auto-detect locally
+                String ci = System.getenv("CI");
+                if (ci != null && ci.equalsIgnoreCase("true")) {
+                    WebDriverManager.chromedriver().driverVersion("143.0.7499.109").clearDriverCache().setup();
+                } else {
+                    WebDriverManager.chromedriver().setup();
+                }
                 return new ChromeDriver(getChromeOptions(headless));
             case "firefox":
                 WebDriverManager.firefoxdriver().setup();
@@ -96,4 +102,3 @@ public class DriverFactory {
         }
     }
 }
-
