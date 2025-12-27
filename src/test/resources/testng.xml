@@ -7,7 +7,7 @@
         <listener class-name="org.example.listeners.TestListener"/>
     </listeners>
 
-    <test name="MultiBank Tests" preserve-order="true">
+    <test name="MultiBank Tests" preserve-order="true" parallel="classes" thread-count="3">
         <classes>
             <class name="tests.NavigationTest"/>
             <class name="tests.TradingTest"/>
@@ -15,5 +15,4 @@
             <class name="tests.WhyMultiBankTest"/>
         </classes>
     </test>
-
 </suite>

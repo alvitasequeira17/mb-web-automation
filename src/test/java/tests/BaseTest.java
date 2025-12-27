@@ -4,6 +4,7 @@ import io.qameta.allure.Allure;
 import org.example.config.ConfigReader;
 import org.example.driver.DriverFactory;
 import org.example.utils.ScreenshotUtil;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,6 +26,7 @@ public class BaseTest {
         String browserToUse = getBrowserParam(browser);
         logger.info("Setting up test with browser: {}", browserToUse);
         driver = DriverFactory.initializeDriver(browserToUse);
+        driver.manage().window().setSize(new Dimension(1920, 1080));
     }
 
     @AfterMethod(alwaysRun = true)
