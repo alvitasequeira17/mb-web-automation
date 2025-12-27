@@ -81,7 +81,7 @@ public class DriverFactory {
                 .implicitlyWait(Duration.ofSeconds(config.getTimeouts().getImplicitWait()))
                 .pageLoadTimeout(Duration.ofSeconds(config.getTimeouts().getPageLoad()))
                 .scriptTimeout(Duration.ofSeconds(config.getTimeouts().getScriptTimeout()));
-        webDriver.manage().window().maximize();
+//        webDriver.manage().window().maximize();
     }
 
     public static WebDriver getDriver() {
